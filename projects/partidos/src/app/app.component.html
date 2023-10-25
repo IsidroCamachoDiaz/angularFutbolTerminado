@@ -1,0 +1,17 @@
+<div *ngIf="partidos">
+  <div *ngFor="let partido of partidos; let i=index;">
+    <app-muestra-partido [partido]="partido" [indice]="i" (emitePartido)="partidoActivo($event)"
+      (emiteIndice)="indiceActivo($event)"></app-muestra-partido>
+  </div>
+  <div class="row w-100 align-items-center">
+    <div class="col text-center">
+      <button type="button" class="btn btn-success" (click)="actualizarPartidos()">Grabar Partido</button>
+    </div>
+  </div>
+</div>
+<hr>
+<div *ngIf="cambio">
+  <div *ngFor="let partido of partidos">
+    <p>{{partido.nombreLocal}} {{partido.golesLocal}} - {{partido.golesVisitante}} {{partido.nombreVisitante}}</p>
+  </div>
+</div>

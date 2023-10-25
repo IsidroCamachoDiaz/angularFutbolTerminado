@@ -1,0 +1,30 @@
+<table class="table">
+  <thead class="table-primary">
+    <tr>
+      <th scope="col">Puesto</th>
+      <th scope="col">Nombre de Equipo</th>
+      <th scope="col">PJ</th>
+      <th scope="col">G</th>
+      <th scope="col">E</th>
+      <th scope="col">P</th>
+      <th scope="col">GF</th>
+      <th scope="col">GC</th>
+      <th scope="col">PT</th>
+      <th scope="col">GoalVerage</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="equipos" class="thead-light">
+    <tr *ngFor="let equipo of equipos; let i=index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{equipo.nombre}}</td>
+      <td>{{equipo.partidosJugados}}</td>
+      <td>{{equipo.partidosGanados}}</td>
+      <td>{{equipo.partidosEmpatados}}</td>
+      <td>{{equipo.partidosPerdidos}}</td>
+      <td>{{equipo.golesFavor}}</td>
+      <td>{{equipo.golesContra}}</td>
+      <td>{{(equipo.partidosGanados*3)+equipo.partidosEmpatados}}</td>
+      <td>{{equipo.golesFavor-equipo.golesContra}}</td>
+    </tr>
+  </tbody>
+</table>

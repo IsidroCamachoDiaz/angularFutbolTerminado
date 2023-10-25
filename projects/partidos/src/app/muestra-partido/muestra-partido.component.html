@@ -1,0 +1,6 @@
+<div *ngIf="partido">
+    <span class="el"> Equipo Local: {{partido.nombreLocal}} </span>
+    <input type="text" [(ngModel)]="partido.golesLocal" (click)="cambiarPartido(partido,indice)" size=2>
+    <input type="text" [(ngModel)]="partido.golesVisitante" (click)="cambiarPartido(partido,indice)" size=2>
+    <span class="ev">Equipo Visitante: {{partido.nombreVisitante}} </span>
+</div>
