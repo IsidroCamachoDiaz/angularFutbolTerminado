@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{agente.avatar}}" alt="{{agente.first_name}}">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{agente.first_name}} {{agente.last_name}}</h5>
+                    <p class="card-text"><label>Nombre: </label><input type="text" [(ngModel)]="agente.first_name"></p>
+                    <p class="card-text"><label>Apellidos: </label><input type="text" [(ngModel)]="agente.last_name"></p>
+                    <p class="card-text"><label>Email: </label><input type="text" [(ngModel)]="agente.email"></p>
+                    <p *ngIf="!agente.avatar"><label>Avatar: </label><input type="text" [(ngModel)]="agente.avatar"></p>
+                    <button type="button" class="btn btn-success">Enviar Datos</button>
+                    <button type="button" class="btn btn-info " routerLink="**" style="color:white">Volver</button>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

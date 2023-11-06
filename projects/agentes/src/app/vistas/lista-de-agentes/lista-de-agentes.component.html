@@ -1,0 +1,7 @@
+<h3>Listado de Agentes</h3>
+<ul class="list-group" *ngIf="usuarios">
+    <li *ngFor="let agente of usuarios.data; let i=index" class="list-group-item">
+        {{agente.first_name}} {{agente.last_name}}
+            <i routerLink="edicion/{{agente.id}}" class="bi bi-pencil p-2" style="color: green;font-size: large;"></i><span>Editar Agente</span>
+    </li>
+</ul>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "partidos-futbol-3e3e4": {
+      "hosting": {
+        "partidos": [
+          "partidos-futbol-3e3e4"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "partidos-futbol-3e3e4"
+  }
+}

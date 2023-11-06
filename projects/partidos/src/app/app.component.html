@@ -1,4 +1,4 @@
-<div *ngIf="partidos">
+<!--<div *ngIf="partidos">
   <div *ngFor="let partido of partidos; let i=index;">
     <app-muestra-partido [partido]="partido" [indice]="i" (emitePartido)="partidoActivo($event)"
       (emiteIndice)="indiceActivo($event)"></app-muestra-partido>
@@ -14,4 +14,5 @@
   <div *ngFor="let partido of partidos">
     <p>{{partido.nombreLocal}} {{partido.golesLocal}} - {{partido.golesVisitante}} {{partido.nombreVisitante}}</p>
   </div>
-</div>
+</div>-->
+<app-contenedor-partidos></app-contenedor-partidos>

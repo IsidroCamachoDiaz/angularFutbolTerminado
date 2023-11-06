@@ -13,11 +13,15 @@ export class AppComponent {
   partidos = this.sp.getPartidos();
   cambio:boolean=false;
   partido: Partido = {
+    jornada:1,
+    grupo:"B",
+    campo:"Almenas",
     nombreLocal: "",
     nombreVisitante: "",
     golesLocal: 0,
     golesVisitante: 0
   };
+  
   indice: number = 0;
   partidoActivo(partido: Partido) {
     this.partido = partido;
