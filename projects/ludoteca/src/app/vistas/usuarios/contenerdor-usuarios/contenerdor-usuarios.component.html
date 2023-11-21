@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="alert alert-danger" role="alert" *ngIf="borro">
+                Se elimino el usuario
+                <button type="button" class="btn btn-danger text-right" (click)="cerrar()"style="color:white">Cerrar Alerta</button>
+            </div>
+            <div *ngIf="usuarios">
+                <div class="card-group">
+                    <div class="card" *ngFor="let u of usuarios">
+                        <img class="card-img-top" src="https://cdn.icon-icons.com/icons2/67/PNG/512/user_13230.png"
+                            alt="Card image cap" *ngIf="!u.imagen" style="border-radius: 50%;">
+                        <img class="card-img-top" src="{{u.imagen}}"
+                            alt="Card image cap" *ngIf="u.imagen" style="border-radius: 50%;">
+                        <div class="card-body bg-danger" *ngIf="u.estaBloqueado">
+                             <h5 class="card-title">{{u.nombre}} (Bloqueado)</h5>
+                            <p class="card-text">Puntos Carnet: {{u.puntos}} Saldo: {{u.saldo}}</p>
+                        </div>
+                        <div class="card-body" *ngIf="!u.estaBloqueado">
+                            <h5 class="card-title">{{u.nombre}}</h5>
+                            <p class="card-text">Puntos Carnet: {{u.puntos}} Saldo: {{u.saldo}}</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <button type="button" class="btn btn-info" routerLink="/usuarios/detalle-usuario/{{u.id}}"
+                                style="color:white">Modificar Usuario</button>
+                            <button type="button" class="btn btn-danger" (click)="eliminarUsuario(u)"
+                                style="color:white">Eliminar Usuario</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

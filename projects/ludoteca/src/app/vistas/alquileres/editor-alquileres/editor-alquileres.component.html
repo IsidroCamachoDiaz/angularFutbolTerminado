@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Alquiler de {{alquiler.usuarioAlquiler.nombre}}</h5>
+                    <label for="select">Juego a Alquilar</label>
+                    <select class="form-control" id="select"  [(ngModel)]="alquiler.juegoAlquiler">
+                        <option *ngFor="let j of juegos" [ngValue]="j">{{j.titulo}}</option>
+                    </select>
+                    <label for="select2">Indique cual es su usuario</label>
+                    <select class="form-control" id="select2"  [(ngModel)]="alquiler.usuarioAlquiler">
+                        <option *ngFor="let u of usuarios" [ngValue]="u">{{u.nombre}}</option>
+                    </select>
+                    <label for="entrega">Fecha de entrega del alquiler</label>
+                    <input type="date" id="entrega" class="sm-form-control" [(ngModel)]="alquiler.fechaEntrega">
+                    
+                    <button type="button" class="btn btn-success" (click)="actualizarAlquiler(alquiler)" *ngIf="id">Modificar Datos</button>
+                    <button class="btn btn-info " (click)="meterAlquiler(alquiler)" style="color:white" *ngIf="!id">Guardar Alquiler</button>
+                    <button class="btn btn-info " routerLink="/alquileres/listado" style="color:white">Volver</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-4"></div>
+        <div class="col-12" *ngIf="alquiler.usuarioAlquiler.estaBloqueado">
+            <div class="card">
+                <div class="card-body bg-danger">
+                    Este Usuario esta bloqueado y no puedo alquilar juegos
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+

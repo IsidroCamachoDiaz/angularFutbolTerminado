@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="alert alert-primary" role="alert" *ngIf="anadido">
+            El juego se añadio al catalogo correctamente
+        </div>
+        <div class="alert alert-warning" role="alert" *ngIf="modificado">
+            El juego se modifico del catalogo correctamente
+        </div>
+        <div class="col"></div>
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{j.titulo}} - {{j.precioAlquiler}}€</h5>
+                    <p class="card-text"><label>Titulo Juego: </label><input type="text" [(ngModel)]="j.titulo"></p>
+                    <p class="card-text"><label>Precio Alquiler: </label><input type="number"
+                            [(ngModel)]="j.precioAlquiler"></p>
+                    <p class="card-text"><label>Foto del juego: </label><input type="text" [(ngModel)]="j.fotoJuego">
+                    </p>
+                    <p class="card-text"><label>Genero del juego: </label><input type="text" [(ngModel)]="j.genero">
+                    </p>
+                    <button type="button" class="btn btn-success" (click)="actualizarJuego(j,id)" *ngIf="id">Enviar
+                        Datos</button>
+                    <button class="btn btn-info " (click)="meterJuego(j)" style="color:white" *ngIf="!id">Guardar
+                        Juego</button>
+                    <button class="btn btn-info " routerLink="/juegos/listado" style="color:white">Volver</button>
+                </div>
+            </div>
+            <div *ngIf="!id">
+                <h2>Imagen del Juego</h2>
+                <img src="{{j.fotoJuego}}" class="img-fluid" alt="Imagen">
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

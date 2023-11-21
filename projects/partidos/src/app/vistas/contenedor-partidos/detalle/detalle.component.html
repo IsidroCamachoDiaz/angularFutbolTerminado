@@ -1,0 +1,31 @@
+<div *ngFor="let p of partidos">
+    <div *ngIf="p.id==id">      
+        <!--<label>Nombre equipo Local</label>
+        <input type="text" [(ngModel)]="p.nombreLocal"><br>
+        <label>Nombre equipo Visitante</label>
+        <input type="text" [(ngModel)]="p.nombreVisitante"><br>
+        <label>Campo</label>
+        <input type="text" [(ngModel)]="p.campo"><br>-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{p.nombreLocal}} vs {{p.nombreVisitante}}</h5>
+                            <p class="card-text"><label>Nombre Equipo Local: </label><input type="text" [(ngModel)]="p.nombreLocal"></p>
+                            <p class="card-text"><label>Nombre Equipo Visitante: </label><input type="text" [(ngModel)]="p.nombreVisitante"></p>
+                            <p class="card-text"><label>Goles Equipo Local: </label><input type="number" [(ngModel)]="p.golesLocal"></p>
+                            <p class="card-text"><label>Goles Equipo Visitante: </label><input type="text" [(ngModel)]="p.golesVisitante"></p>
+                            <p class="card-text"><label>Campo donde se Juega el Partido: </label><input type="text" [(ngModel)]="p.campo"></p>
+                            <button type="button" class="btn btn-success" (click)="actualizarPartido(p,id)">Enviar Datos</button>
+                            <button class="btn btn-info " routerLink="/partidos/listado" style="color:white">Volver</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </div>
+</div>
+

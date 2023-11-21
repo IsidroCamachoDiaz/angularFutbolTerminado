@@ -1,0 +1,22 @@
+<div *ngIf="juegos">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-6" *ngFor="let j of juegos">
+                <div class="card border-primary" style="width: 18rem; ">
+                    <img class="card-img-top" src="{{j.fotoJuego}}" alt="{{j.titulo}}">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">{{j.titulo}} - {{j.precioAlquiler}}€</h5>
+                        <p *ngIf="!j.id"><label>Avatar: </label><input type="text">
+                        </p>
+                        <div class="row">
+                            <div class="col-4"></div>
+                            <div class="col-4"><button type="button" class="btn btn-info"
+                                    routerLink="/juegos/detalle-juego/{{j.id}}">Editar</button></div>
+                            <div class="col-4"><button type="button" class="btn btn-danger" (click)="eliminarJuego(j)">Eliminar</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

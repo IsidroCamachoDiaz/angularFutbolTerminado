@@ -4,6 +4,11 @@
       "target": "partidos",
       "source": ".",
       "frameworksBackend": {}
+    },
+    {
+      "target": "ludoteca",
+      "source": ".",
+      "frameworksBackend": {}
     }
   ]
 }

@@ -6,9 +6,16 @@
           "partidos-futbol-3e3e4"
         ]
       }
+    },
+    "ludoteca-9561e": {
+      "hosting": {
+        "ludoteca": [
+          "ludoteca-9561e"
+        ]
+      }
     }
   },
   "projects": {
-    "default": "partidos-futbol-3e3e4"
+    "default": "ludoteca-9561e"
   }
 }

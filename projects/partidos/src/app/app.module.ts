@@ -10,12 +10,18 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from '../environments/environment.development';
 import { ContenedorPartidosComponent } from './vistas/contenedor-partidos/contenedor-partidos.component';
+import { ListadoComponent } from './vistas/contenedor-partidos/listado/listado.component';
+import { DetalleComponent } from './vistas/contenedor-partidos/detalle/detalle.component';
+import { MenuComponent } from './vistas/menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MuestraPartidoComponent,
-    ContenedorPartidosComponent
+    ContenedorPartidosComponent,
+    ListadoComponent,
+    DetalleComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

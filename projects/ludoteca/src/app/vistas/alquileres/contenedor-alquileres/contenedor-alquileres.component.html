@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4" *ngFor="let a of alquileres;let i=index;">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Alquiler {{i+1}}:</h5>
+                    <div class="row" style="margin-bottom: 20px;">
+                        <div class="col-6">
+                            <p>Juego:</p>
+                            <img class="card-img-top" src="{{a.juegoAlquiler.fotoJuego}}" alt="Card image cap" *ngIf="a.juegoAlquiler.fotoJuego" >
+                            <img class="card-img-top" src="https://img.freepik.com/vector-premium/videojuego-control-kawaii-dibujos-animados-icono-tecnologia-sonriente_24911-12227.jpg?w=900" alt="Card image cap" *ngIf="!a.juegoAlquiler.fotoJuego" >
+                        </div>
+                        <div class="col-6">
+                            <p>Usuario:</p>
+                            <img class="card-img-top" src="{{a.usuarioAlquiler.imagen}}" alt="Card image cap" *ngIf="a.usuarioAlquiler.imagen">
+                            <img class="card-img-top" src="https://cdn.icon-icons.com/icons2/67/PNG/512/user_13230.png" alt="Card image cap" *ngIf="!a.usuarioAlquiler.imagen">
+                        </div>
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-muted">Juego Alquilado: {{a.juegoAlquiler.titulo}}</h6>
+                    <p class="card-text">El usuario {{a.usuarioAlquiler.nombre}} ha alquilado el juego: {{a.juegoAlquiler.titulo}} por {{a.juegoAlquiler.precioAlquiler}} € hasta el dia: {{ponerEspanol(a.fechaEntrega)}}</p>
+                    <button routerLink="/alquileres/editor-alquiler/{{a.id}}" type="button" class="btn btn-outline-primary">Modificar Alquiler</button>
+                    <button (click)="eliminarAlquiler(a)"  type="button" class="btn btn-outline-danger">Eliminar Alquiler</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

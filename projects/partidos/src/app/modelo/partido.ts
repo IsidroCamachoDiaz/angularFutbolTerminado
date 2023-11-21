@@ -1,4 +1,5 @@
 export interface Partido{
+    id?:string;
     jornada:number;
     grupo:string;
     campo:string;

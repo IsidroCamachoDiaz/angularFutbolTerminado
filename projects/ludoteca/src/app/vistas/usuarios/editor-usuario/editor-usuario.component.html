@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <div class="alert alert-success" role="alert"*ngIf="registrado">
+                Herorabuena Te has Inscrito!
+              </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-center" *ngIf="id">Modificar Usuario: {{usuario.nombre}}</h5>
+                    <h5 class="card-title text-center" *ngIf="!id">Añadir Usuario: {{usuario.nombre}}</h5>
+                    <p class="card-text"><label>Nombre del Usuario: </label><input type="text"
+                            [(ngModel)]="usuario.nombre"></p>
+
+                    <p class="card-text"><label>Puntos de la tarjeta: </label><input type="number"
+                            [(ngModel)]="usuario.puntos">
+                    </p>
+                    <p class="card-text"><label>Saldo del usuario: </label><input type="number"
+                            [(ngModel)]="usuario.saldo">
+                    </p>
+                    <p class="card-text"><label>Esta Bloqueado: </label><input type="checkbox"
+                            [(ngModel)]="usuario.estaBloqueado">
+                    </p>
+                    <p class="card-text"><label>Imagen de Usuario: </label><input type="text"
+                        [(ngModel)]="usuario.imagen">
+                    </p>
+                    <button type="button" class="btn btn-success" (click)="actualizarUsuario(usuario,id)"
+                        *ngIf="id">Modificar Usuario</button>
+                    <button class="btn btn-info " (click)="meterUsuario(usuario)" style="color:white" *ngIf="!id">Añadir
+                        Usuario</button>
+                    <button class="btn btn-info " routerLink="/usuarios/listado" style="color:white">Volver</button>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
